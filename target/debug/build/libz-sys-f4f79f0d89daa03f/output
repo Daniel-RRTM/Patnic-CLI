@@ -1,0 +1,73 @@
+cargo:rerun-if-env-changed=LIBZ_SYS_STATIC
+cargo:rerun-if-changed=build.rs
+note, vcpkg did not find zlib: Could not find Vcpkg tree: No vcpkg installation found. Set the VCPKG_ROOT environment variable or run 'vcpkg integrate install'
+TARGET = Some("x86_64-pc-windows-msvc")
+OPT_LEVEL = Some("0")
+HOST = Some("x86_64-pc-windows-msvc")
+CC_x86_64-pc-windows-msvc = None
+CC_x86_64_pc_windows_msvc = None
+HOST_CC = None
+CC = None
+CFLAGS_x86_64-pc-windows-msvc = None
+CFLAGS_x86_64_pc_windows_msvc = None
+HOST_CFLAGS = None
+CFLAGS = None
+CRATE_CC_NO_DEFAULTS = None
+CARGO_CFG_TARGET_FEATURE = Some("fxsr,sse,sse2")
+DEBUG = Some("true")
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Z7" "-Brepro" "-I" "src/zlib" "-FoC:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/inffast.o" "-c" "src/zlib/inffast.c"
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Z7" "-Brepro" "-I" "src/zlib" "-FoC:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/compress.o" "-c" "src/zlib/compress.c"
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Z7" "-Brepro" "-I" "src/zlib" "-FoC:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/inftrees.o" "-c" "src/zlib/inftrees.c"
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Z7" "-Brepro" "-I" "src/zlib" "-FoC:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/infback.o" "-c" "src/zlib/infback.c"
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Z7" "-Brepro" "-I" "src/zlib" "-FoC:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/adler32.o" "-c" "src/zlib/adler32.c"
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Z7" "-Brepro" "-I" "src/zlib" "-FoC:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/inflate.o" "-c" "src/zlib/inflate.c"
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Z7" "-Brepro" "-I" "src/zlib" "-FoC:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/deflate.o" "-c" "src/zlib/deflate.c"
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Z7" "-Brepro" "-I" "src/zlib" "-FoC:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/crc32.o" "-c" "src/zlib/crc32.c"
+inffast.c
+inftrees.c
+adler32.c
+infback.c
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Z7" "-Brepro" "-I" "src/zlib" "-FoC:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/trees.o" "-c" "src/zlib/trees.c"
+compress.c
+inflate.c
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Z7" "-Brepro" "-I" "src/zlib" "-FoC:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/uncompr.o" "-c" "src/zlib/uncompr.c"
+exit code: 0
+deflate.c
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Z7" "-Brepro" "-I" "src/zlib" "-FoC:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/zutil.o" "-c" "src/zlib/zutil.c"
+crc32.c
+exit code: 0
+uncompr.c
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Z7" "-Brepro" "-I" "src/zlib" "-FoC:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/gzclose.o" "-c" "src/zlib/gzclose.c"
+trees.c
+gzclose.c
+zutil.c
+exit code: 0
+exit code: 0
+exit code: 0
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Z7" "-Brepro" "-I" "src/zlib" "-FoC:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/gzlib.o" "-c" "src/zlib/gzlib.c"
+exit code: 0
+exit code: 0
+gzlib.c
+exit code: 0
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Z7" "-Brepro" "-I" "src/zlib" "-FoC:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/gzread.o" "-c" "src/zlib/gzread.c"
+gzread.c
+exit code: 0
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Z7" "-Brepro" "-I" "src/zlib" "-FoC:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/gzwrite.o" "-c" "src/zlib/gzwrite.c"
+exit code: 0
+exit code: 0
+exit code: 0
+gzwrite.c
+exit code: 0
+exit code: 0
+exit code: 0
+AR_x86_64-pc-windows-msvc = None
+AR_x86_64_pc_windows_msvc = None
+HOST_AR = None
+AR = None
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\lib.exe" "-out:C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\libz.a" "-nologo" "C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/adler32.o" "C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/compress.o" "C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/crc32.o" "C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/deflate.o" "C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/infback.o" "C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/inffast.o" "C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/inflate.o" "C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/inftrees.o" "C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/trees.o" "C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/uncompr.o" "C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/zutil.o" "C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/gzclose.o" "C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/gzlib.o" "C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/gzread.o" "C:\\Users\\Daniel\\Desktop\\Experimental-Stuff-Collection\\DevCLI\\target\\debug\\build\\libz-sys-f4f79f0d89daa03f\\out\\lib\\src/zlib/gzwrite.o"
+exit code: 0
+cargo:rustc-link-lib=static=z
+cargo:rustc-link-search=native=C:\Users\Daniel\Desktop\Experimental-Stuff-Collection\DevCLI\target\debug\build\libz-sys-f4f79f0d89daa03f\out\lib
+cargo:root=C:\Users\Daniel\Desktop\Experimental-Stuff-Collection\DevCLI\target\debug\build\libz-sys-f4f79f0d89daa03f\out
+cargo:rustc-link-search=native=C:\Users\Daniel\Desktop\Experimental-Stuff-Collection\DevCLI\target\debug\build\libz-sys-f4f79f0d89daa03f\out\lib
+cargo:include=C:\Users\Daniel\Desktop\Experimental-Stuff-Collection\DevCLI\target\debug\build\libz-sys-f4f79f0d89daa03f\out/include

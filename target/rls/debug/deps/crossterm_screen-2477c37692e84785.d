@@ -1,0 +1,10 @@
+c:\Users\Daniel\Desktop\Experimental-Stuff-Collection\DevCLI\target\rls\debug\deps\crossterm_screen-2477c37692e84785.rmeta: C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\lib.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\mod.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\alternate.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\raw.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\sys\mod.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\sys\winapi.rs
+
+c:\Users\Daniel\Desktop\Experimental-Stuff-Collection\DevCLI\target\rls\debug\deps\crossterm_screen-2477c37692e84785.d: C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\lib.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\mod.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\alternate.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\raw.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\sys\mod.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\sys\winapi.rs
+
+C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\lib.rs:
+C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\mod.rs:
+C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\alternate.rs:
+C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\raw.rs:
+C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\sys\mod.rs:
+C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\sys\winapi.rs:

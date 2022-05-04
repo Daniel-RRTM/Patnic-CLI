@@ -1,0 +1,11 @@
+C:\Users\Daniel\Desktop\Experimental-Stuff-Collection\DevCLI\target\debug\deps\libc-6c2e4ed3bbbdcb76.rmeta: C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\lib.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\macros.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\fixed_width_ints.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\windows\mod.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\windows\msvc.rs
+
+C:\Users\Daniel\Desktop\Experimental-Stuff-Collection\DevCLI\target\debug\deps\liblibc-6c2e4ed3bbbdcb76.rlib: C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\lib.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\macros.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\fixed_width_ints.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\windows\mod.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\windows\msvc.rs
+
+C:\Users\Daniel\Desktop\Experimental-Stuff-Collection\DevCLI\target\debug\deps\libc-6c2e4ed3bbbdcb76.d: C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\lib.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\macros.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\fixed_width_ints.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\windows\mod.rs C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\windows\msvc.rs
+
+C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\lib.rs:
+C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\macros.rs:
+C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\fixed_width_ints.rs:
+C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\windows\mod.rs:
+C:\Users\Daniel\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.98\src\windows\msvc.rs:
