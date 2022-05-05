@@ -1,4 +1,4 @@
-prefix=C:\Users\user\Documents\GitHub\PatnicRoom\CLI\target\debug\build\libz-sys-a5d111bb578c48e1\out
+prefix=C:\Users\user\Desktop\PatnicRoom Env\Workspace\CLI\target\debug\build\libz-sys-a5d111bb578c48e1\out
 exec_prefix=@exec_prefix@
 libdir=@libdir@
 sharedlibdir=@sharedlibdir@

@@ -23,10 +23,10 @@
 # This should most probably benefit from getting a "Requires:" field added
 # dynamically by configure.
 #
-prefix=C:\Users\user\Documents\GitHub\PatnicRoom\CLI\target\debug\build\curl-sys-c12907e7088c4a5d\out
+prefix=C:\Users\user\Desktop\PatnicRoom Env\Workspace\CLI\target\debug\build\curl-sys-c12907e7088c4a5d\out
 exec_prefix=
-libdir=C:\Users\user\Documents\GitHub\PatnicRoom\CLI\target\debug\build\curl-sys-c12907e7088c4a5d\out\lib
-includedir=C:\Users\user\Documents\GitHub\PatnicRoom\CLI\target\debug\build\curl-sys-c12907e7088c4a5d\out\include
+libdir=C:\Users\user\Desktop\PatnicRoom Env\Workspace\CLI\target\debug\build\curl-sys-c12907e7088c4a5d\out\lib
+includedir=C:\Users\user\Desktop\PatnicRoom Env\Workspace\CLI\target\debug\build\curl-sys-c12907e7088c4a5d\out\include
 supported_protocols=""
 supported_features=""
 

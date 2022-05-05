@@ -69,10 +69,9 @@ fn get_game_init()->String{   return helpers::filepaths::get_game_init()   }
 
 fn check(){
     let mut first_cond = _chek_changelog("https://raw.githubusercontent.com/Daniel-RRR/Patnic-Src/main/ChangeLog.md");
-    
-
-
-
+    let mut first_cond = _chek_changelog("https://raw.githubusercontent.com/Daniel-RRR/Patnic-IDE/main/ChangeLog.md");
+    let mut first_cond = _chek_changelog("https://raw.githubusercontent.com/Daniel-RRR/Patnic-CLI/main/ChangeLog.md");
+    let mut first_cond = _chek_changelog("https://raw.githubusercontent.com/Daniel-RRR/Patnic-Docs/main/ChangeLog.md");
 }
 
 
@@ -96,13 +95,8 @@ fn _chek_changelog(workspace:&str) -> bool{
     html.retain(|c| !c.is_whitespace());
     println!("{:?}\n\n", html);
 
-
-
-    
-
     let mut contents = fs::read_to_string(format!("{}Patnic-Src/ChangeLog.md",helpers::filepaths::get_root()))
         .expect("Something went wrong reading the file");
-    //let saniticed_content = contents.retain(|c| !c.is_whitespace());
     contents.retain(|c| !c.is_whitespace());
     println!("With text:\n{}",contents);
     
@@ -119,7 +113,7 @@ fn _chek_changelog(workspace:&str) -> bool{
 
 
 fn push(){
-    let mut contents = fs::read_to_string(format!("{}Patnic-Src/ChangeLog.md",helpers::filepaths::get_root()))
+    let mut contents = fs::read_to_string(format!("{}/Src/ChangeLog.md",helpers::filepaths::get_root()))
         .expect("Something went wrong reading the file");
 
     let mut isFirstEntryInFile = true;

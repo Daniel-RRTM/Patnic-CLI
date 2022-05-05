@@ -100,7 +100,7 @@ pub mod filepaths{
 
     pub fn get_root() -> String{
         let path = env::current_dir().unwrap().to_str().unwrap().to_string();
-        let splitted_root: Vec<&str> = path.split("Patnic-CLI").collect();
+        let splitted_root: Vec<&str> = path.split("CLI").collect();
         let to_return = splitted_root[0];
         //print!("{}",to_return.to_string());
         return to_return.to_string();

@@ -2,10 +2,10 @@
 # libssh2 installation details
 ###########################################################################
 
-prefix=C:\Users\user\Documents\GitHub\PatnicRoom\CLI\target\debug\build\libssh2-sys-cdf5a2815b065613\out
+prefix=C:\Users\user\Desktop\PatnicRoom Env\Workspace\CLI\target\debug\build\libssh2-sys-cdf5a2815b065613\out
 exec_prefix=
-libdir=C:\Users\user\Documents\GitHub\PatnicRoom\CLI\target\debug\build\libssh2-sys-cdf5a2815b065613\out\lib
-includedir=C:\Users\user\Documents\GitHub\PatnicRoom\CLI\target\debug\build\libssh2-sys-cdf5a2815b065613\out\include
+libdir=C:\Users\user\Desktop\PatnicRoom Env\Workspace\CLI\target\debug\build\libssh2-sys-cdf5a2815b065613\out\lib
+includedir=C:\Users\user\Desktop\PatnicRoom Env\Workspace\CLI\target\debug\build\libssh2-sys-cdf5a2815b065613\out\include
 
 Name: libssh2
 URL: https://www.libssh2.org/
