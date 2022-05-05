@@ -100,7 +100,7 @@ fn _chek_changelog(workspace:&str) -> bool{
 
     
 
-    let mut contents = fs::read_to_string(format!("{}Src/ChangeLog.md",helpers::filepaths::get_root()))
+    let mut contents = fs::read_to_string(format!("{}Patnic-Src/ChangeLog.md",helpers::filepaths::get_root()))
         .expect("Something went wrong reading the file");
     //let saniticed_content = contents.retain(|c| !c.is_whitespace());
     contents.retain(|c| !c.is_whitespace());
@@ -119,7 +119,7 @@ fn _chek_changelog(workspace:&str) -> bool{
 
 
 fn push(){
-    let mut contents = fs::read_to_string(format!("{}Src/ChangeLog.md",helpers::filepaths::get_root()))
+    let mut contents = fs::read_to_string(format!("{}Patnic-Src/ChangeLog.md",helpers::filepaths::get_root()))
         .expect("Something went wrong reading the file");
 
     let mut isFirstEntryInFile = true;
@@ -134,7 +134,7 @@ fn push(){
         }
     }
     print!("{}",commit_message);
-    helpers::bash_commands::push_repo(format!("{}/Src",helpers::filepaths::get_root()).as_str(),commit_message.as_str())
+    helpers::bash_commands::push_repo(format!("{}/Patnic-Src",helpers::filepaths::get_root()).as_str(),commit_message.as_str())
 
 
 

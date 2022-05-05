@@ -42,9 +42,11 @@ pub mod bash_commands{
 
     pub fn push_repo(filepath:&str,commit_message:&str){
         env::set_current_dir(filepath);
-        Command::new("git add").arg(".").status();   
-        Command::new("git commit -m").arg(format!("\"{}\"",commit_message).as_str()).status();   
-        Command::new("git push").status();   
+        Command::new("git").arg("fetch").status().expect(" ");   
+        Command::new("git").arg("add").arg(".").status().expect(" ");   
+        Command::new("git").arg("commit").arg(format!("-m \"{}\"",commit_message).as_str()).status().expect(" ");   
+        let test = Command::new("git").arg("push").status().expect(" ");   
+        print!("{}",test.to_string())
     }
 
 }
@@ -98,7 +100,7 @@ pub mod filepaths{
 
     pub fn get_root() -> String{
         let path = env::current_dir().unwrap().to_str().unwrap().to_string();
-        let splitted_root: Vec<&str> = path.split("CLI").collect();
+        let splitted_root: Vec<&str> = path.split("Patnic-CLI").collect();
         let to_return = splitted_root[0];
         //print!("{}",to_return.to_string());
         return to_return.to_string();
