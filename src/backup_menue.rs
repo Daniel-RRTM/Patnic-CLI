@@ -45,7 +45,7 @@
         print!("{}",root);
 
         fs_extra::copy_items(&[format!("{}",root)],&to_insert,&options);
-        fs::rename(format!("{}PatnicRoom",root),format!("{}Cache",root));
+        fs::rename(format!("{}Workspace",root),format!("{}Cache",root));
     }
 
 

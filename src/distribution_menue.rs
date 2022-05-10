@@ -128,7 +128,7 @@ fn push(){
         }
     }
     print!("{}",commit_message);
-    helpers::bash_commands::push_repo(format!("{}/Patnic-Src",helpers::filepaths::get_root()).as_str(),commit_message.as_str())
+    helpers::bash_commands::push_repo(format!("{}/Src",helpers::filepaths::get_root()).as_str(),commit_message.as_str())
 
 
 
