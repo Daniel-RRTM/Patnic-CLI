@@ -123,12 +123,7 @@ fn _chek_changelog(workspace:&str,branch:&str) -> bool{
 }
 
 
-fn fetch(){
-    helpers::bash_commands::fetch_repo(&format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),"Src"));
-    helpers::bash_commands::fetch_repo(&format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),"IDE"));
-    helpers::bash_commands::fetch_repo(&format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),"CLI"));
-    helpers::bash_commands::fetch_repo(&format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),"Docs"));
-}
+
 
 
 

@@ -10,7 +10,8 @@ pub fn set_up(){
 
         menue::build_menue_point("api", "create API of MD-Files"),
         menue::build_menue_point("wiki", "create Wiki of MD-Files"),
-        menue::build_menue_point("site", "inserts html of MD into website")
+        menue::build_menue_point("site", "inserts html of MD into website"),
+        menue::build_menue_point("fetd", "reset current Workspaces to dev")
 
     ]);
 
@@ -23,11 +24,17 @@ fn check_input(){
         "api" => api()   ,
         "wiki" => wiki()   ,
         "site" => site(),
+        "fetd" => fetch(),
          _     => print!("still WIP"),
     }
 }
 
-
+fn fetch(){
+    helpers::bash_commands::fetch_repo(&format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),"Src"));
+    helpers::bash_commands::fetch_repo(&format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),"IDE"));
+    helpers::bash_commands::fetch_repo(&format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),"CLI"));
+    helpers::bash_commands::fetch_repo(&format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),"Docs"));
+}
 
 
 
