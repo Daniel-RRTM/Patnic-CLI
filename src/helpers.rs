@@ -20,7 +20,12 @@ pub mod bash_commands{
     use std::path::Path;
     use std::fs;
     
-    pub fn execute_cmd(cmd:&str, arg:&str){   Command::new(cmd).arg(arg).status();   }
+    pub fn execute_cmd(cmd:&str, arg:&str){   
+        
+        if arg == ""{Command::new(cmd).status();}
+        else{Command::new(cmd).arg(arg).status();}
+            
+    }
 
     pub fn start_patnic_with_calc(){   Command::new("sh").arg("startPatnicRoom.sh").status().expect(" ");   }
     

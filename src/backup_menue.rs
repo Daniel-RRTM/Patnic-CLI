@@ -1,20 +1,22 @@
 
     use crate::menue;
     use crate::helpers;
+    use crate::main;
     use std::process::Command;
     use std::fs;
     use std::env;
 
 
     pub fn set_up(){
-
+        
         menue::print_title("BACKUP");
         menue::print_menue(&[
             menue::build_menue_point("crea", "create new cache"),
             menue::build_menue_point("dele", "delete current cache"),
-            menue::build_menue_point("load", "load last cache")
+            menue::build_menue_point("load", "load last cache"),
+            menue::build_menue_point("----", "--------------------"),
+            menue::build_menue_point("esc ", "go back to mainmenue"),
         ]);
-
         check_input()
     }
 
@@ -23,7 +25,8 @@
             "crea" => create(),
             "dele" => delete(),
             "load" => load(),
-            _     => print!("still WIP"),
+            "esc" => menue::print_main_menue(), 
+            _     =>  set_up(),
         }
     }
 

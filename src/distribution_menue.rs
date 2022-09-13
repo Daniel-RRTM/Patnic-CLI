@@ -18,9 +18,11 @@ pub fn set_up(){
     menue::print_title("DISTRIBUTION");
     menue::print_menue(&[
         menue::build_menue_point("calc", "calculate Atlas of Game-elements"),
-        menue::build_menue_point("ched", "check if Project is pushable for dev"), 
-        menue::build_menue_point("chem", "check if Project is pushable for main"), 
-        menue::build_menue_point("push", "adds,commits and pushes all repos") 
+        menue::build_menue_point("ched", "check if changelog is pushable for dev"), 
+        menue::build_menue_point("chem", "check if changelog is pushable for main"), 
+        menue::build_menue_point("push", "adds,commits and pushes all repos"),
+        menue::build_menue_point("----", "---------------------------------------"),
+        menue::build_menue_point("esc ", "go back to mainmenue"),
     ]);
 
     check_input()
@@ -32,7 +34,8 @@ fn check_input(){
         "ched" => check("dev"),
         "chem" => check("main"),
         "push" => push(),
-         _     => print!("still WIP"),
+        "esc" => menue::print_main_menue(), 
+        _     =>  set_up(),
     }
 }
 
@@ -98,8 +101,7 @@ fn _chek_changelog(workspace:&str,branch:&str) -> bool{
         transfer.perform().unwrap();
     }
 
-   // html.retain(|c| !c.is_whitespace());
-    println!("{}\n\n", html);   // DEBUG TO PRINT
+   html.retain(|c| !c.is_whitespace());
 
     
     let mut contents = fs::read_to_string(filepath).expect("Something went wrong reading the file");
@@ -127,14 +129,13 @@ fn _chek_changelog(workspace:&str,branch:&str) -> bool{
 
 
 
-fn push(){
-    menue::print_chapter("Src");
-    if !_chek_changelog("Src","dev"){push_repo("Src")}
-    menue::print_chapter("IDE");
-    if !_chek_changelog("IDE","dev"){push_repo("IDE")}
-    menue::print_chapter("CLI");
-    if !_chek_changelog("CLI","dev"){push_repo("CLI")}
-    menue::print_chapter("Docs");
+pub fn push(){
+    menue::print_chapter("Checking Changellogs");
+    helpers::text_formater::print_cyan("! ONLY PSUHES IF CHANGELOG DIFFER !\n\n");
+
+    if !_chek_changelog("Src","dev"){push_repo("Src")} 
+    if !_chek_changelog("IDE","dev"){push_repo("IDE")} 
+    if !_chek_changelog("CLI","dev"){push_repo("CLI")} 
     if !_chek_changelog("Docs","main"){push_repo("Docs")}
 }
 
