@@ -142,6 +142,5 @@ fn push_repo(workspace:&str){
             commit_message = format!("{}\n{}", commit_message, line);
         }
     }
-    print!("{}",commit_message);
-    helpers::bash_commands::push_repo(&path,commit_message.as_str())
+    helpers::bash_commands::push_repo(&path,commit_message.as_str());
 }
