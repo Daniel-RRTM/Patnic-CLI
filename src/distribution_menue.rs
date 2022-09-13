@@ -1,6 +1,7 @@
 
 use crate::menue;
 use crate::helpers;
+use crate::backup_menue;
 
 use std::env;
 use std::fs;
@@ -115,6 +116,14 @@ fn _chek_changelog(workspace:&str) -> bool{
     return contents == html
 }
 
+
+fn fetch(){
+    backup_menue::create();
+    helpers::bash_commands::fetch_repo(&format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),"Src"));
+    helpers::bash_commands::fetch_repo(&format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),"IDE"));
+    helpers::bash_commands::fetch_repo(&format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),"CLI"));
+    helpers::bash_commands::fetch_repo(&format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),"Docs"));
+}
 
 
 
