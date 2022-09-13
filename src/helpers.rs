@@ -50,8 +50,8 @@ pub mod bash_commands{
         env::set_current_dir(filepath);
        // Command::new("git").arg("fetch").status().expect(" ");  
        
-       let test = Command::new("git").arg("add").arg(".").status().expect(" ");   
-        print!("ADD! \n\n{}",test.to_string());
+       let test = Command::new("git").arg("add").arg(".").status();   
+        
 
         let test = Command::new("git").arg("commit").arg(format!("-m \"{}\"",commit_message).as_str()).status().expect(" ");   
        // print!("COMMIT! \n\n{}",test.to_string());
