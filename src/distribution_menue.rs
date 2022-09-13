@@ -128,7 +128,6 @@ fn push(){
 
 fn push_repo(workspace:&str){
     helpers::text_formater::print_white("  >  pushing...");
-    print!("{}",helpers::filepaths::get_root());
     let path = format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),workspace);
     let mut contents = fs::read_to_string(&path).expect("Something went wrong reading the file");
 
