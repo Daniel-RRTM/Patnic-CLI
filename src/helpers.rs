@@ -13,6 +13,8 @@ pub mod text_formater{
 
 pub mod bash_commands{
     use crate::helpers::filepaths::get_root;
+    use crate::helpers::text_formater::print_cyan;
+    use crate::helpers::text_formater::print_white;
     use std::process::Command;
     use std::env;
     use std::path::Path;
@@ -47,18 +49,18 @@ pub mod bash_commands{
     }
 
     pub fn push_repo(filepath:&str,commit_message:&str){
-        let test = env::set_current_dir(filepath).expect(" ");
-       print!("{:?}", test);
-        // Command::new("git").arg("fetch").status().expect(" ");  
-       
-       let test = Command::new("git").arg("add").arg(".").status();   
-        
+        let current_dir = env::current_dir().unwrap().to_str().unwrap().to_string();
+        env::set_current_dir(filepath);
 
-        let test = Command::new("git").arg("commit").arg(format!("-m \"{}\"",commit_message).as_str()).status().expect(" ");   
-       // print!("COMMIT! \n\n{}",test.to_string());
-           
-        let test = Command::new("git").arg("push").status().expect(" ");   
-        //print!("PUSH! \n\n{}",test.to_string())
+        // Command::new("git").arg("fetch").status().expect(" ");
+        print_cyan("Adding...\n");
+        Command::new("git").arg("add").arg(".").status().expect(" ");   
+        print_cyan("Commiting...\n");
+        Command::new("git").arg("commit").arg(format!("-m \"{}\"",commit_message).as_str()).status().expect(" ");
+        print_cyan("Pushing...\n");
+        Command::new("git").arg("push").status().expect(" ");
+
+        env::set_current_dir(current_dir);
     }
 
     pub fn fetch_repo(filepath:&str){

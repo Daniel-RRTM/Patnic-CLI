@@ -18,7 +18,8 @@ pub fn set_up(){
     menue::print_title("DISTRIBUTION");
     menue::print_menue(&[
         menue::build_menue_point("calc", "calculate Atlas of Game-elements"),
-        menue::build_menue_point("chek", "check if Project is pushable"), 
+        menue::build_menue_point("ched", "check if Project is pushable for dev"), 
+        menue::build_menue_point("chem", "check if Project is pushable for main"), 
         menue::build_menue_point("push", "adds,commits and pushes all repos") 
     ]);
 
@@ -28,7 +29,8 @@ pub fn set_up(){
 fn check_input(){
     match helpers::input_validator::sanitice().as_str() {
         "calc" => calculate(),
-        "chek" => check(),
+        "ched" => check("dev"),
+        "chem" => check("main"),
         "push" => push(),
          _     => print!("still WIP"),
     }
@@ -68,19 +70,22 @@ fn get_game_init()->String{   return helpers::filepaths::get_game_init()   }
 
 
 
-fn check(){
-    let mut first_cond = _chek_changelog("Src");
-    let mut first_cond = _chek_changelog("IDE");
-    let mut first_cond = _chek_changelog("CLI");
-    let mut first_cond = _chek_changelog("Docs");
+fn check(branch:&str){
+    let mut first_cond = _chek_changelog("Src",branch);
+    let mut first_cond = _chek_changelog("IDE",branch);
+    let mut first_cond = _chek_changelog("CLI",branch);
+    let mut first_cond = _chek_changelog("Docs","main");
 }
 
 
-
-fn _chek_changelog(workspace:&str) -> bool{
+fn _chek_changelog(workspace:&str,branch:&str) -> bool{
     let mut data = String::new();
     let mut easy = Easy::new();
-    let url = format!("https://raw.githubusercontent.com/Daniel-RRR/Patnic-{}/main/ChangeLog.md",workspace);
+    let url      = format!("https://raw.githubusercontent.com/Daniel-RRR/Patnic-{}/{}/ChangeLog.md",workspace,branch);
+    let filepath = format!("{}{}\\ChangeLog.md",helpers::filepaths::get_root(),workspace);
+    //print!("{}\n{}\n{}\n{}\n",workspace,branch,url,filepath);    // DEBUG TO PRINT
+
+
     easy.url(&url).unwrap();
 
     let mut html: String = String::new();
@@ -93,10 +98,11 @@ fn _chek_changelog(workspace:&str) -> bool{
         transfer.perform().unwrap();
     }
 
-    html.retain(|c| !c.is_whitespace());
-    //println!("{:?}\n\n", html);   // DEBUG TO PRINT
+   // html.retain(|c| !c.is_whitespace());
+    println!("{}\n\n", html);   // DEBUG TO PRINT
 
-    let mut contents = fs::read_to_string(format!("{}Src/ChangeLog.md",helpers::filepaths::get_root())).expect("Something went wrong reading the file");
+    
+    let mut contents = fs::read_to_string(filepath).expect("Something went wrong reading the file");
     contents.retain(|c| !c.is_whitespace());
     
     let mut to_print_workspace;
@@ -118,7 +124,6 @@ fn _chek_changelog(workspace:&str) -> bool{
 
 
 fn fetch(){
-    backup_menue::create();
     helpers::bash_commands::fetch_repo(&format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),"Src"));
     helpers::bash_commands::fetch_repo(&format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),"IDE"));
     helpers::bash_commands::fetch_repo(&format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),"CLI"));
@@ -128,19 +133,20 @@ fn fetch(){
 
 
 fn push(){
-    //if !_chek_changelog("Src"){push_repo("Src")}
-    //if !_chek_changelog("IDE"){push_repo("IDE")}
-    if !_chek_changelog("CLI"){push_repo("CLI")}
-    //if !_chek_changelog("Docs"){push_repo("Docs")}
+    menue::print_chapter("Src");
+    if !_chek_changelog("Src","dev"){push_repo("Src")}
+    menue::print_chapter("IDE");
+    if !_chek_changelog("IDE","dev"){push_repo("IDE")}
+    menue::print_chapter("CLI");
+    if !_chek_changelog("CLI","dev"){push_repo("CLI")}
+    menue::print_chapter("Docs");
+    if !_chek_changelog("Docs","main"){push_repo("Docs")}
 }
 
 
 fn push_repo(workspace:&str){
     let path_repo       = format!("{}\\{}",helpers::filepaths::get_root(),workspace);
     let path_change_log = format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),workspace);
-    menue::print_chapter(workspace);
-    helpers::text_formater::print_white("  >  pushing...");
-
     let mut contents = fs::read_to_string(&path_change_log).expect("Something went wrong reading the file");
 
     let mut isFirstEntryInFile = true;
