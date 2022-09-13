@@ -47,8 +47,9 @@ pub mod bash_commands{
     }
 
     pub fn push_repo(filepath:&str,commit_message:&str){
-        env::set_current_dir(filepath);
-       // Command::new("git").arg("fetch").status().expect(" ");  
+        let test = env::set_current_dir(filepath).expect(" ");
+       print!("{:?}", test);
+        // Command::new("git").arg("fetch").status().expect(" ");  
        
        let test = Command::new("git").arg("add").arg(".").status();   
         

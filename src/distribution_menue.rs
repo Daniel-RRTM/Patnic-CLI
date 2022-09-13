@@ -128,18 +128,20 @@ fn fetch(){
 
 
 fn push(){
-    if !_chek_changelog("Src"){push_repo("Src")}
-    if !_chek_changelog("IDE"){push_repo("IDE")}
+    //if !_chek_changelog("Src"){push_repo("Src")}
+    //if !_chek_changelog("IDE"){push_repo("IDE")}
     if !_chek_changelog("CLI"){push_repo("CLI")}
-    if !_chek_changelog("Docs"){push_repo("Docs")}
+    //if !_chek_changelog("Docs"){push_repo("Docs")}
 }
 
 
 fn push_repo(workspace:&str){
+    let path_repo       = format!("{}\\{}",helpers::filepaths::get_root(),workspace);
+    let path_change_log = format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),workspace);
     menue::print_chapter(workspace);
     helpers::text_formater::print_white("  >  pushing...");
-    let path = format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),workspace);
-    let mut contents = fs::read_to_string(&path).expect("Something went wrong reading the file");
+
+    let mut contents = fs::read_to_string(&path_change_log).expect("Something went wrong reading the file");
 
     let mut isFirstEntryInFile = true;
     let mut commit_message : String;
@@ -152,5 +154,5 @@ fn push_repo(workspace:&str){
             commit_message = format!("{}\n{}", commit_message, line);
         }
     }
-    helpers::bash_commands::push_repo(&path,commit_message.as_str());
+    helpers::bash_commands::push_repo(&path_repo,commit_message.as_str());
 }
