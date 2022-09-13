@@ -23,14 +23,20 @@ pub mod bash_commands{
     pub fn start_patnic_with_calc(){   Command::new("sh").arg("startPatnicRoom.sh").status().expect(" ");   }
     
     pub fn build_Wiki(){   
-        let filepath_to_docs = format!("{}/Docs/Wiki",get_root()); 
-        env::set_current_dir(filepath_to_docs);
-        Command::new("mkdocs").arg("build").status().expect(" ");   
-    }
-    pub fn build_API(){   
-        let filepath_to_docs = format!("{}/Docs/API",get_root()); 
+        let filepath_root = format!("{}CLI\\Src",get_root());
+        let filepath_to_docs = format!("{}Docs\\Wiki",get_root());
+        
         env::set_current_dir(filepath_to_docs);
         Command::new("mkdocs").arg("build").status().expect(" ");
+        env::set_current_dir(filepath_root);
+    }
+    pub fn build_API(){
+        let filepath_root = format!("{}CLI\\Src",get_root());
+        let filepath_to_docs = format!("{}Docs\\API",get_root());
+
+        env::set_current_dir(filepath_to_docs);
+        Command::new("mkdocs").arg("build").status().expect(" ");
+        env::set_current_dir(filepath_root);
     }
     
     pub fn remove_cached_project(){
@@ -102,7 +108,6 @@ pub mod filepaths{
         let path = env::current_dir().unwrap().to_str().unwrap().to_string();
         let splitted_root: Vec<&str> = path.split("CLI").collect();
         let to_return = splitted_root[0];
-        //print!("{}",to_return.to_string());
         return to_return.to_string();
     }
 

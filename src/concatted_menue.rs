@@ -37,8 +37,14 @@ fn back_up_project(){
 fn create_docs(){
     backup_menue::delete();
     backup_menue::create();
+
     distribution_menue::calculate();
-    helpers::bash_commands::build_API();     
-    synchronice_menue::wiki();     
+
+    menue::print_chapter("building Markdowns...");
+    helpers::bash_commands::build_Wiki();
+    helpers::bash_commands::build_API();
+    
+    menue::print_chapter("Distributing HTMLs...");
+    synchronice_menue::site();
 }
 

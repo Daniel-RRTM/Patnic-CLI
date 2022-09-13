@@ -68,10 +68,10 @@ fn get_game_init()->String{   return helpers::filepaths::get_game_init()   }
 
 
 fn check(){
-    let mut first_cond = _chek_changelog("https://raw.githubusercontent.com/Daniel-RRR/Patnic-Src/main/ChangeLog.md");
-    let mut first_cond = _chek_changelog("https://raw.githubusercontent.com/Daniel-RRR/Patnic-IDE/main/ChangeLog.md");
-    let mut first_cond = _chek_changelog("https://raw.githubusercontent.com/Daniel-RRR/Patnic-CLI/main/ChangeLog.md");
-    let mut first_cond = _chek_changelog("https://raw.githubusercontent.com/Daniel-RRR/Patnic-Docs/main/ChangeLog.md");
+    let mut first_cond = _chek_changelog("Src");
+    let mut first_cond = _chek_changelog("IDE");
+    let mut first_cond = _chek_changelog("CLI");
+    let mut first_cond = _chek_changelog("Docs");
 }
 
 
@@ -79,8 +79,8 @@ fn check(){
 fn _chek_changelog(workspace:&str) -> bool{
     let mut data = String::new();
     let mut easy = Easy::new();
-    
-    easy.url(workspace).unwrap();
+    let url = format!("https://raw.githubusercontent.com/Daniel-RRR/Patnic-{}/main/ChangeLog.md",workspace);
+    easy.url(&url).unwrap();
 
     let mut html: String = String::new();
     {
@@ -89,23 +89,29 @@ fn _chek_changelog(workspace:&str) -> bool{
             html = String::from_utf8(Vec::from(data)).unwrap();        
             Ok(data.len())
         }).unwrap(); 
-
         transfer.perform().unwrap();
     }
+
     html.retain(|c| !c.is_whitespace());
-    println!("{:?}\n\n", html);
+    //println!("{:?}\n\n", html);   // DEBUG TO PRINT
 
-    let mut contents = fs::read_to_string(format!("{}Patnic-Src/ChangeLog.md",helpers::filepaths::get_root()))
-        .expect("Something went wrong reading the file");
+    let mut contents = fs::read_to_string(format!("{}Src/ChangeLog.md",helpers::filepaths::get_root())).expect("Something went wrong reading the file");
     contents.retain(|c| !c.is_whitespace());
-    println!("With text:\n{}",contents);
     
+    let mut to_print_workspace;
+    let mut to_print_validation;
+    
+    if workspace.len() == 3{ to_print_workspace = format!("{} ",workspace);     } 
+    else{                    to_print_workspace = format!("{}",workspace); }
+    
+    if contents == html{ to_print_validation = format!(" IS  same  ✓");     } 
+    else{                to_print_validation = format!(" NOT same  ×"); }
+    
+    let mut to_print = &format!(" >  {}{}\n",to_print_workspace,to_print_validation);
 
-    if contents == html{
-        println!("Same"); 
-    }else{
-        println!("not same"); 
-    }
+    if to_print.contains("✓"){helpers::text_formater::print_cyan(to_print);}
+    if to_print.contains("×"){helpers::text_formater::print_white(to_print);}
+
     return contents == html
 }
 
@@ -113,8 +119,17 @@ fn _chek_changelog(workspace:&str) -> bool{
 
 
 fn push(){
-    let mut contents = fs::read_to_string(format!("{}/Src/ChangeLog.md",helpers::filepaths::get_root()))
-        .expect("Something went wrong reading the file");
+    if !_chek_changelog("Src"){push_repo("Src")}
+    if !_chek_changelog("IDE"){push_repo("IDE")}
+    if !_chek_changelog("CLI"){push_repo("CLI")}
+    if !_chek_changelog("Docs"){push_repo("Docs")}
+}
+
+
+fn push_repo(workspace:&str){
+    helpers::text_formater::print_white("  >  pushing...");
+    let path = format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),workspace);
+    let mut contents = fs::read_to_string(&path).expect("Something went wrong reading the file");
 
     let mut isFirstEntryInFile = true;
     let mut commit_message : String;
@@ -128,10 +143,5 @@ fn push(){
         }
     }
     print!("{}",commit_message);
-    helpers::bash_commands::push_repo(format!("{}/Src",helpers::filepaths::get_root()).as_str(),commit_message.as_str())
-
-
-
+    helpers::bash_commands::push_repo(&path,commit_message.as_str())
 }
-
-
