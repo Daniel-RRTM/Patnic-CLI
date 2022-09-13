@@ -51,13 +51,13 @@ pub mod bash_commands{
        // Command::new("git").arg("fetch").status().expect(" ");  
        
        let test = Command::new("git").arg("add").arg(".").status().expect(" ");   
-        print!("{}",test.to_string());
+        print!("ADD! \n\n{}",test.to_string());
 
         let test = Command::new("git").arg("commit").arg(format!("-m \"{}\"",commit_message).as_str()).status().expect(" ");   
-        print!("{}",test.to_string());
+        print!("COMMIT! \n\n{}",test.to_string());
            
         let test = Command::new("git").arg("push").status().expect(" ");   
-        print!("{}",test.to_string())
+        print!("PUSH! \n\n{}",test.to_string())
     }
 
     pub fn fetch_repo(filepath:&str){
