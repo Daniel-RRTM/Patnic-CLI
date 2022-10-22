@@ -11,7 +11,6 @@ pub fn set_up(){
     menue::print_menue(&[
         menue::build_menue_point("back", "cache the whole project                         [dele,crea,load]"),
         menue::build_menue_point("docs", "creates Statistics and MD of current Entities   [dele,crea,calc,wiki,api,site]"),
-        menue::build_menue_point("docs", "creates Statistics and MD of current Entities   [dele,crea,calc,wiki,api,site]"),
         menue::build_menue_point("refr", "Caches current Workspace and fetchs dev         [dele,crea,fetd]"),
         menue::build_menue_point("pusd", "pushes current Workspaces to dev                [ched,push]"),
         menue::build_menue_point("----", "------------------------------------------------------------------------------"),

@@ -3,15 +3,11 @@ use crate::menue;
 use crate::helpers;
 use crate::backup_menue;
 
+
 use std::env;
 use std::fs;
-use std::fs::OpenOptions;
-use std::io;
 use std::io::{stdout, Write};
-use crossterm::style::*;
-use std::process::Command;
 use curl::easy::Easy;
-use std::fmt::Display;
 
 pub fn set_up(){
     
@@ -20,7 +16,7 @@ pub fn set_up(){
         menue::build_menue_point("calc", "calculate Atlas of Game-elements"),
         menue::build_menue_point("ched", "check if changelog is pushable for dev"), 
         menue::build_menue_point("chem", "check if changelog is pushable for main"), 
-        menue::build_menue_point("push", "adds,commits and pushes all repos"),
+        menue::build_menue_point("pusd", "pushes current Worspaces to dev"),
         menue::build_menue_point("----", "---------------------------------------"),
         menue::build_menue_point("esc ", "go back to mainmenue"),
     ]);
@@ -33,7 +29,7 @@ fn check_input(){
         "calc" => calculate(),
         "ched" => check("dev"),
         "chem" => check("main"),
-        "push" => push(),
+        "pusd" => push(),
         "esc" => menue::print_main_menue(), 
         _     =>  set_up(),
     }
@@ -79,16 +75,12 @@ fn check(branch:&str){
     let mut first_cond = _chek_changelog("CLI",branch);
     let mut first_cond = _chek_changelog("Docs","main");
 }
-
-
-fn _chek_changelog(workspace:&str,branch:&str) -> bool{
+pub fn _chek_changelog(workspace:&str,branch:&str) -> bool{
     let mut data = String::new();
     let mut easy = Easy::new();
     let url      = format!("https://raw.githubusercontent.com/Daniel-RRR/Patnic-{}/{}/ChangeLog.md",workspace,branch);
     let filepath = format!("{}{}\\ChangeLog.md",helpers::filepaths::get_root(),workspace);
     //print!("{}\n{}\n{}\n{}\n",workspace,branch,url,filepath);    // DEBUG TO PRINT
-
-
     easy.url(&url).unwrap();
 
     let mut html: String = String::new();
@@ -100,7 +92,6 @@ fn _chek_changelog(workspace:&str,branch:&str) -> bool{
         }).unwrap(); 
         transfer.perform().unwrap();
     }
-
    html.retain(|c| !c.is_whitespace());
 
     
@@ -130,7 +121,7 @@ fn _chek_changelog(workspace:&str,branch:&str) -> bool{
 
 
 pub fn push(){
-    menue::print_chapter("Checking Changellogs");
+    menue::print_chapter("Checking Changelogs");
     helpers::text_formater::print_cyan("! ONLY PSUHES IF CHANGELOG DIFFER !\n\n");
 
     if !_chek_changelog("Src","dev"){push_repo("Src")} 
@@ -138,8 +129,6 @@ pub fn push(){
     if !_chek_changelog("CLI","dev"){push_repo("CLI")} 
     if !_chek_changelog("Docs","main"){push_repo("Docs")}
 }
-
-
 fn push_repo(workspace:&str){
     let path_repo       = format!("{}\\{}",helpers::filepaths::get_root(),workspace);
     let path_change_log = format!("{}\\{}\\ChangeLog.md",helpers::filepaths::get_root(),workspace);
@@ -158,3 +147,9 @@ fn push_repo(workspace:&str){
     }
     helpers::bash_commands::push_repo(&path_repo,commit_message.as_str());
 }
+
+
+
+
+
+
