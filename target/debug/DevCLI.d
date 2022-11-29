@@ -1,1 +1,1 @@
-C:\Users\user\Desktop\Patnic-CLI\target\debug\DevCLI.exe: C:\Users\user\Desktop\Patnic-CLI\src\main.rs
+C:\Users\user\Desktop\Patnic-CLI\ -\ Kopie\target\debug\DevCLI.exe: C:\Users\user\Desktop\Patnic-CLI\ -\ Kopie\src\main.rs
