@@ -1,0 +1,2 @@
+cargo:rustc-cfg=tokio_no_const_thread_local
+cargo:rustc-cfg=tokio_no_const_mutex_new

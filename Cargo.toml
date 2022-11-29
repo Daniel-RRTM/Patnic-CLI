@@ -7,16 +7,9 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-find_folder = "*"
-clap = "*"
-structopt = "*"
-crossterm = "0.18"
-fs_extra = "1.2.0"
-git2 = "*"
-curl = "*"
-
-[dependencies.cursive]
-version = "0.11"
-default-features = false
-features = ["crossterm-backend"]
-chrono = "0.4"
+log = "0.4"
+tui-logger = "0.7"
+tui = "0.17"
+crossterm = "0.23"
+tokio = { version = "1", features = ["full"] }
+eyre = "0.6"

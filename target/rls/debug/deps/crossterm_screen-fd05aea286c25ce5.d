@@ -1,0 +1,10 @@
+c:\Users\user\Desktop\Patnic-CLI\target\rls\debug\deps\crossterm_screen-fd05aea286c25ce5.rmeta: C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\lib.rs C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\mod.rs C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\alternate.rs C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\raw.rs C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\sys\mod.rs C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\sys\winapi.rs
+
+c:\Users\user\Desktop\Patnic-CLI\target\rls\debug\deps\crossterm_screen-fd05aea286c25ce5.d: C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\lib.rs C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\mod.rs C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\alternate.rs C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\raw.rs C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\sys\mod.rs C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\sys\winapi.rs
+
+C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\lib.rs:
+C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\mod.rs:
+C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\alternate.rs:
+C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\screen\raw.rs:
+C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\sys\mod.rs:
+C:\Users\user\.cargo\registry\src\github.com-1ecc6299db9ec823\crossterm_screen-0.2.5\src\sys\winapi.rs:
