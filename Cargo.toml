@@ -10,6 +10,7 @@ edition = "2018"
 log = "0.4"
 tui-logger = "0.7"
 tui = "0.17"
+tui-input = "*"
 crossterm = "0.23"
 tokio = { version = "1", features = ["full"] }
 eyre = "0.6"
